@@ -14,4 +14,4 @@ jobs:
       with:
         name: telegram-desktop-userfonts
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-    - run: nix build .#telegram-desktop-userfonts -L
+    - run: nix build .#packages.telegram-desktop-userfonts -L
