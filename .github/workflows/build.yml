@@ -1,6 +1,8 @@
 name: "Build"
 on:
   push:
+    paths:
+      - 'flake.lock'
   workflow_dispatch:
 jobs:
   build:
