@@ -21,4 +21,4 @@ jobs:
         nix build .#packages.x86_64-linux.telegram-desktop-userfonts -L
 
         # aarch64-linux
-        nix build .#packages.aarch64-linux.telegram-desktop-userfonts -L --arg crossSystem '{ config = "aarch64-unknown-linux-gnu"; }';
+        # nix build .#packages.aarch64-linux.telegram-desktop-userfonts -L --arg crossSystem '{ config = "aarch64-unknown-linux-gnu"; }';
