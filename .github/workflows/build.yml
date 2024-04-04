@@ -17,6 +17,8 @@ jobs:
         name: propheci
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: |
-        for system in "aarch64-linux" "x86_64-linux"; do
-          nix build .#packages.$system.telegram-desktop-userfonts -L
-        done
+        # x86_64-linux
+        nix build .#packages.x86_64-linux.telegram-desktop-userfonts -L
+
+        # aarch64-linux
+        nix build .#packages.aarch64-linux.telegram-desktop-userfonts -L --arg crossSystem '{ config = "aarch64-unknown-linux-gnu"; }';
