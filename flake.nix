@@ -20,6 +20,8 @@
     {
         packages = eachSystem (system: {
             telegram-desktop-userfonts = pkgsFor."${system}".telegram-desktop.overrideAttrs (old: {
+                paname = "telegram-desktop-userfonts";
+
                 preConfigure = ''
                     for ttf in Telegram/lib_ui/fonts/*.ttf; do
                         rm $ttf
@@ -29,6 +31,19 @@
                 '';
 
                 cmakeFlags = old.cmakeFlags ++ [ "-DCMAKE_BUILD_TYPE=Release" ];
+
+                meta = with lib; {
+                    description = "Telegram Desktop which respects fontconfig";
+                    longDescription = ''
+                      Desktop client for the Telegram messenger, based on the Telegram API and
+                      the MTProto secure protocol.
+                    '';
+                    license = licenses.gpl3Only;
+                    platforms = platforms.all;
+                    homepage = "https://desktop.telegram.org/";
+                    changelog = "https://github.com/telegramdesktop/tdesktop/releases/tag/v${old.version}";
+                    mainProgram =  old.mainProgram;
+                };
             });
         });
     };
