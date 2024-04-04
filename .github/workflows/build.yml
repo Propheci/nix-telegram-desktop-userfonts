@@ -16,4 +16,7 @@ jobs:
       with:
         name: propheci
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-    - run: nix build .#packages.telegram-desktop-userfonts -L
+    - run: |
+        for system in "aarch64-linux" "x86_64-linux"; do
+          nix build .#packages.$system.telegram-desktop-userfonts -L
+        done
