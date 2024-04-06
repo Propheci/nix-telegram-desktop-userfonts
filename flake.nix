@@ -20,7 +20,7 @@
     {
         packages = eachSystem (system: {
             telegram-desktop-userfonts = pkgsFor."${system}".telegram-desktop.overrideAttrs (old: {
-                paname = "telegram-desktop-userfonts";
+                pname = "telegram-desktop-userfonts";
 
                 preConfigure = ''
                     for ttf in Telegram/lib_ui/fonts/*.ttf; do
