@@ -19,7 +19,7 @@ jobs:
         name: propheci
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: |
-        nix build .#packages.x86_64-linux.telegram-desktop-userfonts -L
+        nix build .#packages.x86_64-linux.default -L
 
   # build-arm64:
   #   runs-on: ubuntu-latest

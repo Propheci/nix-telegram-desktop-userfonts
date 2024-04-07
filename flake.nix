@@ -3,7 +3,6 @@
 
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-
         systems.url = "github:nix-systems/default-linux";
     };
 
@@ -19,7 +18,7 @@
     in
     {
         packages = eachSystem (system: {
-            telegram-desktop-userfonts = pkgsFor."${system}".telegram-desktop.overrideAttrs (old: {
+            default = pkgsFor."${system}".telegram-desktop.overrideAttrs (old: {
                 pname = "telegram-desktop-userfonts";
 
                 preConfigure = ''
