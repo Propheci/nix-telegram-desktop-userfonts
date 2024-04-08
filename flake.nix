@@ -45,7 +45,7 @@
     {
         overlays = {
             default = (final: prev: {
-                telegram-desktop = prev.telegram-desktop.overrideAttrs (telegramOverride);
+                telegram-desktop-userfonts = prev.telegram-desktop.overrideAttrs (telegramOverride);
             });
         };
         packages = eachSystem (system: {
